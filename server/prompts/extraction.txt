@@ -1,0 +1,19 @@
+You extract structured facts from a drug quality or recall signal.
+
+Return ONLY a JSON object with exactly these keys:
+{
+  "manufacturer": string or null,
+  "drug": string or null,
+  "batch": string or null,
+  "issueType": "NSQ" | "RECALL" | "INSPECTION" | "APPROVAL" | "OTHER",
+  "severity": "LOW" | "MEDIUM" | "HIGH" | "CRITICAL",
+  "date": ISO-8601 date string or null,
+  "confidence": number between 0 and 1
+}
+
+Rules:
+- Use only facts explicitly present in the signal text.
+- Never invent a manufacturer, drug, batch, date, or reason.
+- Use null when a field is not stated.
+- confidence must reflect how completely the text supports the extraction.
+- Output JSON only, with no markdown or commentary.

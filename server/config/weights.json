@@ -1,0 +1,28 @@
+{
+  "factors": {
+    "regulatoryApproval": 0.2,
+    "recentNsq": 0.2,
+    "recallHistory": 0.2,
+    "marketPresence": 0.1,
+    "approvedProducts": 0.1,
+    "regulatoryTier": 0.2
+  },
+  "coldStart": {
+    "minProducts": 2,
+    "minSignals": 1
+  },
+  "bands": {
+    "high": 80,
+    "moderate": 60
+  },
+  "recentNsqMonths": 24,
+  "recallHalfLifeDays": 365,
+  "baseline": {
+    "regulatoryTier": {
+      "Tier 1": 85,
+      "Tier 2": 75,
+      "Tier 3": 65,
+      "Unrated": 60
+    }
+  }
+}

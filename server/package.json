@@ -1,0 +1,40 @@
+{
+  "name": "@meditrust/server",
+  "version": "0.1.0",
+  "private": true,
+  "type": "module",
+  "main": "src/index.js",
+  "scripts": {
+    "dev": "nodemon src/index.js",
+    "start": "node src/index.js",
+    "seed": "node src/seed/seed.js",
+    "test": "vitest run",
+    "test:watch": "vitest",
+    "ingest:orangebook": "node src/ingestion/orangeBook.js",
+    "ingest:indianmeds": "node src/ingestion/indianMeds.js",
+    "ingest:janaushadhi": "node src/ingestion/janAushadhi.js",
+    "ingest:cdsco": "node src/ingestion/cdscoNsq.js",
+    "ingest:openfda": "node src/ingestion/openFdaRecalls.js",
+    "calibrate": "node scripts/calibrateScoring.js",
+    "train:risk": "node scripts/trainRiskModel.js"
+  },
+  "dependencies": {
+    "axios": "^1.20.0",
+    "cors": "^2.8.5",
+    "csv-parse": "^7.0.3",
+    "dotenv": "^16.4.5",
+    "express": "^4.21.1",
+    "fast-fuzzy": "^1.12.0",
+    "helmet": "^8.0.0",
+    "ml-logistic-regression": "^2.0.0",
+    "ml-matrix": "^6.15.1",
+    "mongoose": "^8.8.0",
+    "morgan": "^1.10.0",
+    "pdf-parse": "^2.4.5",
+    "zod": "^4.6.7"
+  },
+  "devDependencies": {
+    "nodemon": "^3.1.7",
+    "vitest": "^5.0.5"
+  }
+}

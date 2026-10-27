@@ -1,0 +1,29 @@
+{
+  "name": "meditrust",
+  "version": "0.1.0",
+  "private": true,
+  "description": "MediTrust - cost-ranked generic equivalents with an explainable manufacturer trust score",
+  "type": "module",
+  "workspaces": [
+    "server",
+    "client"
+  ],
+  "scripts": {
+    "dev": "npm run dev --workspace server",
+    "dev:server": "npm run dev --workspace server",
+    "dev:client": "npm run dev --workspace client",
+    "start": "npm run start --workspace server",
+    "seed": "npm run seed --workspace server",
+    "test": "npm test --workspace server",
+    "ingest:orangebook": "npm run ingest:orangebook --workspace server",
+    "ingest:indianmeds": "npm run ingest:indianmeds --workspace server",
+    "ingest:janaushadhi": "npm run ingest:janaushadhi --workspace server",
+    "ingest:cdsco": "npm run ingest:cdsco --workspace server",
+    "ingest:openfda": "npm run ingest:openfda --workspace server",
+    "calibrate": "npm run calibrate --workspace server",
+    "train:risk": "npm run train:risk --workspace server"
+  },
+  "engines": {
+    "node": ">=20"
+  }
+}

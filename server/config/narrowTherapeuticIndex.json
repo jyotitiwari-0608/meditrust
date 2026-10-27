@@ -1,0 +1,20 @@
+{
+  "description": "Narrow therapeutic index drugs require extra caution when substituting.",
+  "salts": [
+    "Warfarin",
+    "Digoxin",
+    "Lithium",
+    "Phenytoin",
+    "Carbamazepine",
+    "Theophylline",
+    "Levothyroxine",
+    "Cyclosporine",
+    "Tacrolimus",
+    "Sirolimus",
+    "Methotrexate",
+    "Valproic Acid",
+    "Amiodarone",
+    "Gentamicin",
+    "Vancomycin"
+  ]
+}
