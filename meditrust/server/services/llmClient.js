@@ -49,9 +49,11 @@ function sleep(ms) {
 }
 
 function extractJson(text) {
+  const bt = String.fromCharCode(96);
+  const fence = bt + bt + bt;
   const cleaned = text
-    .replaceAll("```json", "")
-    .replaceAll("```", "")
+    .split(fence + "json").join("")
+    .split(fence).join("")
     .trim();
   try {
     return JSON.parse(cleaned);
