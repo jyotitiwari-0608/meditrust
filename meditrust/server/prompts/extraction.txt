@@ -1,0 +1,21 @@
+You extract structured fields from a drug safety signal (NSQ / recall / inspection) text.
+Return ONLY a JSON object with these exact keys:
+- manufacturer (string or null)
+- drug (string or null)
+- batch (string or null)
+- issueType (one of: "NSQ", "RECALL", "INSPECTION", "APPROVAL", or null)
+- severity (one of: "low", "medium", "high", "critical", or null)
+- date (ISO string or null)
+- confidence (number between 0 and 1)
+
+Rules:
+- Ground every field strictly in the provided text. Never invent claims.
+- If a field is not present in the text, use null.
+- Set confidence low (below 0.7) if the text is ambiguous or missing key facts.
+- Output valid JSON only, no markdown fences, no extra prose.
+
+Signal text:
+{{
+text}}
+{{
+}}

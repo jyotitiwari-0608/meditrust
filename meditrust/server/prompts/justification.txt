@@ -1,0 +1,16 @@
+You produce a plain-language justification of a manufacturer trust score.
+Input: a structured score object with score (0-100), band, and factors[] (each with name, value, weight, contribution).
+Output: 2-3 sentences of plain-language explanation.
+Rules:
+- Use ONLY numbers and facts present in the input score object.
+- Do not invent manufacturers, dates, signal counts, or prices.
+- Every number mentioned must exist in the input factors.
+- If unsure, fall back to the template:
+  "This manufacturer has a trust score of {score} out of 100, rated {band}. The score is built from weighted factors including regulatory approval, NSQ/recall signals, market presence, product count, and regulatory tier."
+- Output plain text only, no JSON, no markdown.
+
+Score object:
+{{
+score}}
+{{
+}}

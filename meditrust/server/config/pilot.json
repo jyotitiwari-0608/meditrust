@@ -1,0 +1,5 @@
+{
+  "category": "antihypertensives",
+  "salts": ["amlodipine", "telmisartan", "losartan", "atenolol", "metoprolol", "hydrochlorothiazide"],
+  "maxManufacturers": 30
+}

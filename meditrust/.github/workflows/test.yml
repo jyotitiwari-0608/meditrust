@@ -1,0 +1,39 @@
+name: CI
+
+on:
+  push:
+    branches: [main, master]
+  pull_request:
+    branches: [main, master]
+
+jobs:
+  test:
+    runs-on: ubuntu-latest
+    services:
+      mongodb:
+        image: mongo:7
+        ports:
+          - 27017:27017
+    env:
+      MONGODB_URI: mongodb://localhost:27017/meditrust_test
+      NODE_ENV: test
+      LLM_PROVIDER: gemini
+      GEMINI_API_KEY: dummy
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-node@v4
+        with:
+          node-version: 22
+          cache: npm
+      - name: Install server deps
+        working-directory: meditrust/server
+        run: npm install
+      - name: Install client deps
+        working-directory: meditrust/client
+        run: npm install
+      - name: Run server tests
+        working-directory: meditrust/server
+        run: npm test
+      - name: Build client
+        working-directory: meditrust/client
+        run: npm run build

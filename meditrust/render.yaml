@@ -1,0 +1,26 @@
+services:
+  - type: web
+    name: meditrust-server
+    env: node
+    buildCommand: npm install && npm install --prefix ../client && npm run build --prefix ../client
+    startCommand: npm start
+    envVars:
+      - key: NODE_ENV
+        value: production
+      - key: PORT
+        value: 4000
+      - key: MONGODB_URI
+        sync: false
+      - key: CORS_ORIGIN
+        sync: false
+      - key: LLM_PROVIDER
+        value: gemini
+      - key: GEMINI_API_KEY
+        sync: false
+      - key: GROQ_API_KEY
+        sync: false
+      - key: ANTHROPIC_API_KEY
+        sync: false
+      - key: OLLAMA_BASE_URL
+        value: http://localhost:11434
+    healthCheckPath: /health

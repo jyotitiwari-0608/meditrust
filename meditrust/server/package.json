@@ -1,0 +1,36 @@
+{
+  "name": "meditrust-server",
+  "version": "1.0.0",
+  "type": "module",
+  "scripts": {
+    "start": "node server.js",
+    "dev": "node --watch server.js",
+    "seed": "node scripts/seed.js",
+    "seed:demo": "node scripts/seedDemo.js seed:demo",
+    "seed:demo:score": "node scripts/seedDemo.js seed:demo:score",
+    "seed:demo:extract": "node scripts/seedDemo.js seed:demo:extract",
+    "seed:demo:all": "node scripts/seedDemo.js seed:demo:all",
+    "seed:demo:reset": "node scripts/seedDemo.js seed:demo:reset -- --reset",
+    "test": "vitest run"
+  },
+  "dependencies": {
+    "axios": "^1.7.4",
+    "cors": "^2.8.5",
+    "csv-parse": "^5.5.5",
+    "dotenv": "^16.4.5",
+    "express": "^4.19.2",
+    "express-rate-limit": "^8.7.2",
+    "fast-fuzzy": "^1.7.0",
+    "helmet": "^7.1.0",
+    "ml-logistic-regression": "^2.0.0",
+    "mongodb-memory-server": "^9.1.2",
+    "mongoose": "^8.5.1",
+    "morgan": "^1.10.0",
+    "pdf-parse": "^1.1.1",
+    "zod": "^3.23.8"
+  },
+  "devDependencies": {
+    "supertest": "^7.0.0",
+    "vitest": "^2.0.0"
+  }
+}

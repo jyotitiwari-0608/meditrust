@@ -1,0 +1,8 @@
+{
+  "snippet-1": { "manufacturer": "Alpha Demo Pharma Ltd", "drug": "amlodipine", "batch": "AD-2024-001", "issueType": "APPROVAL", "severity": "low", "date": "2024-01-15", "confidence": 0.95 },
+  "snippet-2": { "manufacturer": "Beta Sample Labs", "drug": "amlodipine", "batch": "BS-2022-041", "issueType": "NSQ", "severity": "low", "date": "2022-06-15", "confidence": 0.92 },
+  "snippet-3": { "manufacturer": "Gamma Test Remedies", "drug": "amlodipine", "batch": "GT-2024-095", "issueType": "RECALL", "severity": "high", "date": "2024-10-20", "confidence": 0.93 },
+  "snippet-4": { "manufacturer": "Zeta Formulations", "drug": "amlodipine", "batch": "ZF-2024-077", "issueType": "APPROVAL", "severity": "low", "date": "2024-02-10", "confidence": 0.90 },
+  "snippet-5": { "manufacturer": null, "drug": null, "batch": null, "issueType": "NSQ", "severity": "medium", "date": "2024-11-01", "confidence": 0.45 },
+  "snippet-6": { "manufacturer": "Delta Newco Pharma", "drug": "amlodipine", "batch": "DN-2024-010", "issueType": "INSPECTION", "severity": "low", "date": "2024-03-05", "confidence": 0.88 }
+}

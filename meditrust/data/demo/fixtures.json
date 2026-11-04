@@ -1,0 +1,64 @@
+{
+  "drugs": [
+    { "salt": "amlodipine", "strength": "5 mg", "form": "tablet", "atcCode": "C08CA01", "category": "antihypertensives" },
+    { "salt": "telmisartan", "strength": "40 mg", "form": "tablet", "atcCode": "C09CA07", "category": "antihypertensives" },
+    { "salt": "metformin", "strength": "500 mg", "form": "tablet", "atcCode": "A10BA02", "category": "antidiabetics" }
+  ],
+  "manufacturers": [
+    { "name": "Alpha Demo Pharma Ltd", "aliases": ["Alpha Demo"], "country": "India", "regulatoryTier": "tier1", "yearsOfMarketPresence": 25, "scenario": "HIGH_TRUST" },
+    { "name": "Beta Sample Labs", "aliases": ["Beta Sample"], "country": "India", "regulatoryTier": "tier2", "yearsOfMarketPresence": 8, "scenario": "MODERATE" },
+    { "name": "Gamma Test Remedies", "aliases": ["Gamma Test"], "country": "India", "regulatoryTier": "tier2", "yearsOfMarketPresence": 3, "scenario": "LOW_TRUST" },
+    { "name": "Delta Newco Pharma", "aliases": ["Delta Newco"], "country": "India", "regulatoryTier": "tier3", "yearsOfMarketPresence": 1, "scenario": "COLD_START" },
+    { "name": "Omega Generic Works", "aliases": ["Omega Generic"], "country": "India", "regulatoryTier": "tier2", "yearsOfMarketPresence": 6, "scenario": "GENERIC" },
+    { "name": "Zeta Formulations", "aliases": ["Zeta"], "country": "India", "regulatoryTier": "tier1", "yearsOfMarketPresence": 12, "scenario": "GENERIC" },
+    { "name": "Cipla Ltd", "aliases": ["Cipla"], "country": "India", "regulatoryTier": "tier1", "yearsOfMarketPresence": 40, "scenario": "REAL" },
+    { "name": "Sun Pharma", "aliases": ["Sun Pharmaceutical"], "country": "India", "regulatoryTier": "tier1", "yearsOfMarketPresence": 40, "scenario": "REAL" }
+  ],
+  "products": [
+    { "drugSalt": "amlodipine", "drugStrength": "5 mg", "manufacturer": "Alpha Demo Pharma Ltd", "brand": "AlphaAmlod 5", "mrp": 45.00, "teCode": "AB", "source": "demo_fixture", "isBrandName": true },
+    { "drugSalt": "amlodipine", "drugStrength": "5 mg", "manufacturer": "Beta Sample Labs", "brand": "BetaPress 5", "mrp": 38.00, "teCode": "AB", "source": "demo_fixture" },
+    { "drugSalt": "amlodipine", "drugStrength": "5 mg", "manufacturer": "Gamma Test Remedies", "brand": "GammaLo 5", "mrp": 32.00, "teCode": "AB", "source": "demo_fixture" },
+    { "drugSalt": "amlodipine", "drugStrength": "5 mg", "manufacturer": "Delta Newco Pharma", "brand": "DeltaDip 5", "mrp": 28.00, "teCode": "AB", "source": "demo_fixture" },
+    { "drugSalt": "amlodipine", "drugStrength": "5 mg", "manufacturer": "Omega Generic Works", "brand": "OmniDip 5", "mrp": 22.00, "teCode": "AB", "source": "demo_fixture" },
+    { "drugSalt": "amlodipine", "drugStrength": "5 mg", "manufacturer": "Zeta Formulations", "brand": "ZetaCard 5", "mrp": 25.00, "teCode": "AB", "source": "demo_fixture" },
+    { "drugSalt": "amlodipine", "drugStrength": "5 mg", "manufacturer": "Cipla Ltd", "brand": "Ciplavasc 5", "mrp": 40.00, "teCode": "AB", "source": "demo_fixture" },
+    { "drugSalt": "amlodipine", "drugStrength": "5 mg", "manufacturer": "Sun Pharma", "brand": "AmlodSun 5", "mrp": 36.00, "teCode": "AB", "source": "demo_fixture" },
+
+    { "drugSalt": "telmisartan", "drugStrength": "40 mg", "manufacturer": "Alpha Demo Pharma Ltd", "brand": "AlphaTel 40", "mrp": 85.00, "teCode": "AB", "source": "demo_fixture", "isBrandName": true },
+    { "drugSalt": "telmisartan", "drugStrength": "40 mg", "manufacturer": "Beta Sample Labs", "brand": "BetaTelm 40", "mrp": 72.00, "teCode": "AB", "source": "demo_fixture" },
+    { "drugSalt": "telmisartan", "drugStrength": "40 mg", "manufacturer": "Gamma Test Remedies", "brand": "GammaSartan 40", "mrp": 60.00, "teCode": "AB", "source": "demo_fixture" },
+    { "drugSalt": "telmisartan", "drugStrength": "40 mg", "manufacturer": "Delta Newco Pharma", "brand": "DeltaTelm 40", "mrp": 55.00, "teCode": "AB", "source": "demo_fixture" },
+    { "drugSalt": "telmisartan", "drugStrength": "40 mg", "manufacturer": "Omega Generic Works", "brand": "OmniTel 40", "mrp": 48.00, "teCode": "AB", "source": "demo_fixture" },
+    { "drugSalt": "telmisartan", "drugStrength": "40 mg", "manufacturer": "Zeta Formulations", "brand": "ZetaTan 40", "mrp": 52.00, "teCode": "AB", "source": "demo_fixture" },
+    { "drugSalt": "telmisartan", "drugStrength": "40 mg", "manufacturer": "Cipla Ltd", "brand": "Telsa 40", "mrp": 78.00, "teCode": "AB", "source": "demo_fixture" },
+    { "drugSalt": "telmisartan", "drugStrength": "40 mg", "manufacturer": "Sun Pharma", "brand": "TelmiSun 40", "mrp": 70.00, "teCode": "AB", "source": "demo_fixture" },
+
+    { "drugSalt": "metformin", "drugStrength": "500 mg", "manufacturer": "Alpha Demo Pharma Ltd", "brand": "AlphaMet 500", "mrp": 28.00, "teCode": "AB", "source": "demo_fixture", "isBrandName": true },
+    { "drugSalt": "metformin", "drugStrength": "500 mg", "manufacturer": "Beta Sample Labs", "brand": "BetaSugar 500", "mrp": 24.00, "teCode": "AB", "source": "demo_fixture" },
+    { "drugSalt": "metformin", "drugStrength": "500 mg", "manufacturer": "Gamma Test Remedies", "brand": "GammaMet 500", "mrp": 20.00, "teCode": "AB", "source": "demo_fixture" },
+    { "drugSalt": "metformin", "drugStrength": "500 mg", "manufacturer": "Delta Newco Pharma", "brand": "DeltaGly 500", "mrp": 18.00, "teCode": "AB", "source": "demo_fixture" },
+    { "drugSalt": "metformin", "drugStrength": "500 mg", "manufacturer": "Omega Generic Works", "brand": "OmniMet 500", "mrp": 15.00, "teCode": "AB", "source": "demo_fixture" },
+    { "drugSalt": "metformin", "drugStrength": "500 mg", "manufacturer": "Zeta Formulations", "brand": "ZetaBet 500", "mrp": 16.00, "teCode": "AB", "source": "demo_fixture" },
+    { "drugSalt": "metformin", "drugStrength": "500 mg", "manufacturer": "Cipla Ltd", "brand": "Gluconorm 500", "mrp": 26.00, "teCode": "AB", "source": "demo_fixture" },
+    { "drugSalt": "metformin", "drugStrength": "500 mg", "manufacturer": "Sun Pharma", "brand": "SugarSun 500", "mrp": 23.00, "teCode": "AB", "source": "demo_fixture" },
+
+    { "drugSalt": "metformin", "drugStrength": "500 mg", "manufacturer": "Omega Generic Works", "brand": "Jan Aushadhi Metformin 500", "mrp": 9.50, "teCode": "AB", "source": "jan_aushadhi", "isJanAushadhi": true },
+    { "drugSalt": "amlodipine", "drugStrength": "5 mg", "manufacturer": "Zeta Formulations", "brand": "Jan Aushadhi Amlodipine 5", "mrp": 11.00, "teCode": "AB", "source": "jan_aushadhi", "isJanAushadhi": true }
+  ],
+  "signals": [
+    { "manufacturer": "Beta Sample Labs", "type": "NSQ", "date": "2022-06-15", "severity": "low", "sourceName": "Synthetic demo record", "sourceUrl": "https://example.com/demo", "rawText": "Beta Sample Labs batch BS-2022-041 reported below standard quality in routine CDSCO testing." },
+    { "manufacturer": "Gamma Test Remedies", "type": "NSQ", "date": "2024-10-01", "severity": "medium", "sourceName": "Synthetic demo record", "sourceUrl": "https://example.com/demo", "rawText": "Gamma Test Remedies batch GT-2024-090 failed dissolution testing." },
+    { "manufacturer": "Gamma Test Remedies", "type": "NSQ", "date": "2024-10-10", "severity": "medium", "sourceName": "Synthetic demo record", "sourceUrl": "https://example.com/demo", "rawText": "Gamma Test Remedies batch GT-2024-092 failed potency testing." },
+    { "manufacturer": "Gamma Test Remedies", "type": "NSQ", "date": "2024-10-15", "severity": "high", "sourceName": "Synthetic demo record", "sourceUrl": "https://example.com/demo", "rawText": "Gamma Test Remedies batch GT-2024-095 contaminated; recall initiated." },
+    { "manufacturer": "Gamma Test Remedies", "type": "RECALL", "date": "2024-10-20", "severity": "high", "sourceName": "Synthetic demo record", "sourceUrl": "https://example.com/demo", "rawText": "Class I style recall: Gamma Test Remedies batch GT-2024-095, serious adverse event reported." },
+    { "manufacturer": "Unverified Herbal Co", "type": "NSQ", "date": "2024-11-01", "severity": "medium", "sourceName": "Synthetic demo record", "sourceUrl": "https://example.com/demo", "rawText": "Unverified Herbal Co batch UH-2024-110 failed microbial limits." }
+  ],
+  "rawTexts": [
+    { "id": "snippet-1", "text": "Alpha Demo Pharma Ltd batch AD-2024-001 passed all quality tests; no issues found.", "expected": { "manufacturer": "Alpha Demo Pharma Ltd", "confidence": 0.95, "needsReview": false } },
+    { "id": "snippet-2", "text": "Beta Sample Labs batch BS-2022-041 reported below standard quality in routine CDSCO testing.", "expected": { "manufacturer": "Beta Sample Labs", "confidence": 0.92, "needsReview": false } },
+    { "id": "snippet-3", "text": "Gamma Test Remedies batch GT-2024-095 contaminated; recall initiated immediately.", "expected": { "manufacturer": "Gamma Test Remedies", "confidence": 0.93, "needsReview": false } },
+    { "id": "snippet-4", "text": "Zeta Formulations batch ZF-2024-077 was found compliant with all standards.", "expected": { "manufacturer": "Zeta Formulations", "confidence": 0.90, "needsReview": false } },
+    { "id": "snippet-5", "text": "A batch of unknown origin failed dissolution testing; results inconclusive.", "expected": { "manufacturer": null, "confidence": 0.45, "needsReview": true } },
+    { "id": "snippet-6", "text": "Delta Newco Pharma batch DN-2024-010 passed inspection with minor observations.", "expected": { "manufacturer": "Delta Newco Pharma", "confidence": 0.88, "needsReview": false } }
+  ]
+}

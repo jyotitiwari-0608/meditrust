@@ -1,0 +1,19 @@
+{
+  "manufacturers": [
+    { "name": "Cipla Ltd", "expected": 85 },
+    { "name": "Sun Pharma", "expected": 82 },
+    { "name": "Dr. Reddys", "expected": 80 },
+    { "name": "Lupin Ltd", "expected": 75 },
+    { "name": "Aurobindo Pharma", "expected": 72 },
+    { "name": "Zydus Cadila", "expected": 70 },
+    { "name": "Glenmark", "expected": 68 },
+    { "name": "Torrent Pharma", "expected": 66 },
+    { "name": "Mankind Pharma", "expected": 64 },
+    { "name": "Alkem Labs", "expected": 62 },
+    { "name": "Intas Pharma", "expected": 60 },
+    { "name": "Emcure Pharma", "expected": 58 },
+    { "name": "Biocon", "expected": 55 },
+    { "name": "Small Maker A", "expected": 40 },
+    { "name": "New Entrant B", "expected": 30 }
+  ]
+}
