@@ -50,8 +50,8 @@ function sleep(ms) {
 
 function extractJson(text) {
   const cleaned = text
-    .replace(/```json/g, "")
-    .replace(/```/g, "")
+    .replaceAll("```json", "")
+    .replaceAll("```", "")
     .trim();
   try {
     return JSON.parse(cleaned);
