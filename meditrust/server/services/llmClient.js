@@ -142,12 +142,25 @@ async function callAnthropic(prompt) {
   return res.data.content?.[0]?.text || "";
 }
 
+async function callOpenrouter(prompt) {
+  const key = process.env.OPENROUTER_API_KEY;
+  if (!key) throw new Error("OPENROUTER_API_KEY not set");
+  const model = process.env.OPENROUTER_MODEL || "openrouter/auto";
+  const res = await axios.post(
+    "https://openrouter.ai/api/v1/chat/completions",
+    { model, messages: [{ role: "user", content: prompt }], temperature: TEMPERATURE },
+    { headers: { Authorization: `Bearer ${key}` }, timeout: 60000 }
+  );
+  return res.data.choices?.[0]?.message?.content || "";
+}
+
 function providerFn() {
   switch (PROVIDER) {
     case "gemini": return callGemini;
     case "groq": return callGroq;
     case "ollama": return callOllama;
     case "anthropic": return callAnthropic;
+    case "openrouter": return callOpenrouter;
     default: throw new Error(`unsupported LLM_PROVIDER: ${PROVIDER}`);
   }
 }
