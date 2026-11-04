@@ -1,0 +1,20 @@
+{
+  "description": "Reference manufacturers used by scripts/calibrateScoring.js. Expected values are calibration targets, not ground truth.",
+  "manufacturers": [
+    { "name": "Cipla Ltd", "expectedScore": 84, "expectedBand": "High" },
+    { "name": "Sun Pharmaceutical Industries Ltd", "expectedScore": 83, "expectedBand": "High" },
+    { "name": "Dr. Reddy's Laboratories Ltd", "expectedScore": 82, "expectedBand": "High" },
+    { "name": "Lupin Ltd", "expectedScore": 81, "expectedBand": "High" },
+    { "name": "Aurobindo Pharma Ltd", "expectedScore": 80, "expectedBand": "High" },
+    { "name": "Torrent Pharmaceuticals Ltd", "expectedScore": 79, "expectedBand": "Moderate" },
+    { "name": "Zydus Lifesciences Ltd", "expectedScore": 78, "expectedBand": "Moderate" },
+    { "name": "Alkem Laboratories Ltd", "expectedScore": 77, "expectedBand": "Moderate" },
+    { "name": "Mankind Pharma Ltd", "expectedScore": 76, "expectedBand": "Moderate" },
+    { "name": "Glenmark Pharmaceuticals Ltd", "expectedScore": 75, "expectedBand": "Moderate" },
+    { "name": "Abbott India Ltd", "expectedScore": 74, "expectedBand": "Moderate" },
+    { "name": "Intas Pharmaceuticals Ltd", "expectedScore": 73, "expectedBand": "Moderate" },
+    { "name": "Hetero Labs Ltd", "expectedScore": 70, "expectedBand": "Moderate" },
+    { "name": "Acme Generics Pvt Ltd", "expectedScore": 60, "expectedBand": "LimitedData" },
+    { "name": "Unrated Small Manufacturer", "expectedScore": 55, "expectedBand": "LimitedData" }
+  ]
+}

@@ -1,0 +1,65 @@
+{
+  "description": "Pilot therapeutic category list. Ingestion is restricted to these salts.",
+  "salts": [
+    {
+      "salt": "Paracetamol",
+      "aliases": ["Acetaminophen"],
+      "atcCode": "N02BE01",
+      "category": "Analgesic"
+    },
+    {
+      "salt": "Ibuprofen",
+      "aliases": [],
+      "atcCode": "M01AE01",
+      "category": "Analgesic"
+    },
+    {
+      "salt": "Metformin Hydrochloride",
+      "aliases": ["Metformin"],
+      "atcCode": "A10BA02",
+      "category": "Antidiabetic"
+    },
+    {
+      "salt": "Amoxicillin",
+      "aliases": [],
+      "atcCode": "J01CA04",
+      "category": "Antibiotic"
+    },
+    {
+      "salt": "Azithromycin",
+      "aliases": [],
+      "atcCode": "J01FA10",
+      "category": "Antibiotic"
+    },
+    {
+      "salt": "Amlodipine",
+      "aliases": ["Amlodipine Besylate"],
+      "atcCode": "C08CA01",
+      "category": "Antihypertensive"
+    },
+    {
+      "salt": "Losartan",
+      "aliases": ["Losartan Potassium"],
+      "atcCode": "C09CA01",
+      "category": "Antihypertensive"
+    },
+    {
+      "salt": "Atorvastatin",
+      "aliases": [],
+      "atcCode": "C10AA05",
+      "category": "Lipid-lowering"
+    },
+    {
+      "salt": "Omeprazole",
+      "aliases": [],
+      "atcCode": "A02BC01",
+      "category": "Gastrointestinal"
+    },
+    {
+      "salt": "Cetirizine",
+      "aliases": ["Cetirizine Hydrochloride"],
+      "atcCode": "R06AE07",
+      "category": "Antihistamine"
+    }
+  ]
+}
