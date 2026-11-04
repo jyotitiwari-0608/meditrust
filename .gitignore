@@ -1,4 +1,9 @@
 *.md
+!/README.md
+!meditrust/README.md
+!meditrust/AGENTS.md
+!meditrust/prompts.md
+!meditrust/docs/*.md
 node_modules/
 dist/
 .env
