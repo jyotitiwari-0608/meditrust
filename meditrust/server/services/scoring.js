@@ -201,7 +201,7 @@ export async function scoreManufacturer(manufacturerId) {
   return { score, band, factors, manufacturer, limitedData: false, version, computedAt };
 }
 
-function validSignals(signals) {
+export function validSignals(signals) {
   return signals.filter((s) => !isFutureDated(s.date));
 }
 

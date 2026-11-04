@@ -59,11 +59,6 @@ export default function Home() {
             ⚠️ Running in demo mode (backend not reachable). Start the backend server for live data.
           </div>
         )}
-        {apiStatus === "online" && (
-          <div className="status-banner status-online">
-            ✅ Backend connected — live data mode.
-          </div>
-        )}
 
         {/* HERO */}
         <section className="hero">

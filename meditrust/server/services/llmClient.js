@@ -26,7 +26,7 @@ function ensureCacheDir() {
 
 function cacheKey(provider, model, prompt) {
   const hash = crypto.createHash("sha256").update(`${provider}:${model}:${prompt}`).digest("hex");
-  return path.join(CACHE_DIR, `${hash}.json");
+  return path.join(CACHE_DIR, `${hash}.json`);
 }
 
 function rateLimitWait() {
