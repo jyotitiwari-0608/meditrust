@@ -154,7 +154,6 @@ export default function Doctor() {
                       <button
                         className="propose-btn"
                         onClick={() => openConfirm(item)}
-                        disabled={flags.length > 0 && !confirmChecked}
                       >
                         Propose substitution
                       </button>

@@ -201,9 +201,13 @@ export default function Home() {
               referencePrice={referencePrice}
             />
             <EvidencePanel
+              score={evidence ? evidence.score : null}
+              band={evidence ? evidence.band : null}
               factors={(evidence && evidence.factors) || []}
+              justification={evidence ? evidence.justification : null}
               evidenceLinks={(evidence && evidence.provenance) || []}
               open={evidenceOpen}
+              computedAt={evidence ? evidence.computedAt : null}
             />
             {evidence && (
               <button

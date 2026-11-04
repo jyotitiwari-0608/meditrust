@@ -1,7 +1,9 @@
 export default function SavingsTag({ price, referencePrice }) {
-  if (!referencePrice || referencePrice <= 0) return null;
-  const savings = referencePrice - price;
-  const pct = ((savings / referencePrice) * 100).toFixed(0);
+  const p = Number(price);
+  const ref = Number(referencePrice);
+  if (!ref || ref <= 0 || !p || p <= 0 || p >= ref) return null;
+  const savings = ref - p;
+  const pct = ((savings / ref) * 100).toFixed(0);
   return (
     <span className="savings-tag">
       Save ₹{savings.toFixed(2)} ({pct}%)
