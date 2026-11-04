@@ -138,6 +138,14 @@ node scripts/trainRiskModel.js
 ## Patient UI (`/`)
 - SearchBar (debounced), ResultsList ranked equivalents, TrustBadge (green/amber/red/grey), SavingsTag, expandable EvidencePanel, persistent disclaimer footer, loading/empty/no-data states.
 
+## Favorites
+- Select an equivalent from search results to add it to the Favourites section. Remove it there to unsave it.
+- Favorites persist in the current browser using local storage; they are not synced across browsers or devices.
+
+## About and Contact sections
+- About summarizes the medicine search, comparison, and evidence review journey.
+- Contact displays clearly labeled fictional demo identities and placeholder details; it does not send or receive messages.
+
 ## Scan (`/scan`)
 - html5-qrcode barcode/QR + Tesseract.js photo-of-strip OCR; fuzzy match against `/api/search`; confirm matches; camera-permission error handling + manual search fallback.
 
@@ -152,6 +160,8 @@ node scripts/trainRiskModel.js
 - Set `MONGODB_URI` Atlas IP allowlist to include Render outbound IPs / VPC.
 
 ## Demo script
+With `DEMO_MODE=true` in `server/.env`, the server starts an isolated in-memory MongoDB and automatically loads the fictional demo fixtures. No Atlas URI or LLM API key is needed. Demo data is reset when the server stops, so restarting it restores the fixture data. Run the client separately with `cd client && npm run dev` and open `http://localhost:5173`.
+
 1. Search 3 drugs (amlodipine, telmisartan, metformin) — view ranked equivalents + savings.
 2. Select a cold-start manufacturer — confirm "Limited data" band, no penalty.
 3. Trigger an extraction on an ambiguous signal — observe `needsReview=true` (low confidence).

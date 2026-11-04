@@ -3,16 +3,22 @@ import { useState } from "react";
 export function SearchBarInline({ onSearch }) {
   const [q, setQ] = useState("");
   return (
-    <div className="inline-search">
+    <form
+      className="inline-search"
+      onSubmit={(event) => {
+        event.preventDefault();
+        onSearch(q.trim());
+      }}
+    >
       <input
         type="search"
         placeholder="Type medicine name…"
         value={q}
         onChange={(e) => setQ(e.target.value)}
       />
-      <button className="confirm-btn" onClick={() => onSearch(q)} disabled={!q || q.length < 2}>
+      <button type="submit" className="confirm-btn" disabled={q.trim().length < 2}>
         Search
       </button>
-    </div>
+    </form>
   );
 }

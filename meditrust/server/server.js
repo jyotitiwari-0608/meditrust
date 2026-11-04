@@ -17,6 +17,7 @@ import substitutionsRouter from "./routes/substitutions.js";
 import lookupRouter from "./routes/lookup.js";
 import ntiRouter from "./routes/nti.js";
 import adminRouter from "./routes/admin.js";
+import { seedDemoFixtures } from "./scripts/seedDemo.js";
 
 dotenv.config();
 
@@ -31,17 +32,17 @@ if (process.env.NODE_ENV === "production" && !process.env.CORS_ORIGIN) {
 }
 
 async function connectDb() {
-  const uri = process.env.MONGODB_URI;
   const isDemo = process.env.DEMO_MODE === "true";
-  const hasRealUri = uri && !uri.includes("<cluster>") && !uri.includes("<user>") && !uri.includes("<pass>");
 
-  if (isDemo && !hasRealUri) {
+  if (isDemo) {
     mongoMemoryServer = await MongoMemoryServer.create();
     const memoryUri = mongoMemoryServer.getUri();
     console.log("Starting in-memory demo database...");
     await mongoose.connect(memoryUri);
     console.log("MongoDB (in-memory demo) connected");
-  } else if (hasRealUri) {
+    await seedDemoFixtures();
+  } else if (process.env.MONGODB_URI && !process.env.MONGODB_URI.includes("<cluster>") && !process.env.MONGODB_URI.includes("<user>") && !process.env.MONGODB_URI.includes("<pass>")) {
+    const uri = process.env.MONGODB_URI;
     await mongoose.connect(uri);
     console.log("MongoDB connected to Atlas");
   } else {

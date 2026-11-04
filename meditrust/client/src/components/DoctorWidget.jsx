@@ -108,7 +108,6 @@ export default function DoctorWidget({ drugId, brandId, onConfirm }) {
                   <button
                     className="propose-btn"
                     onClick={() => openConfirm(item)}
-                    disabled={flags.length > 0 && !confirmChecked}
                   >
                     Propose substitution
                   </button>

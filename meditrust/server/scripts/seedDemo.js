@@ -3,6 +3,7 @@ import mongoose from "mongoose";
 import dotenv from "dotenv";
 import fs from "fs";
 import path from "path";
+import { fileURLToPath } from "url";
 import { normalizeComposition } from "../utils/normalize.js";
 import { matchManufacturer } from "../utils/fuzzy.js";
 import { computeFactors, coldStartBaseline, bandFor } from "../services/scoring.js";
@@ -16,6 +17,7 @@ import { Extraction } from "../models/Extraction.js";
 
 dotenv.config();
 
+const __dirname = path.dirname(fileURLToPath(import.meta.url));
 const FIXTURES_PATH = path.resolve(__dirname, "../../data/demo/fixtures.json");
 const CACHED_LLM_PATH = path.resolve(__dirname, "../../data/demo/llm-cached.json");
 const NTI_PATH = path.resolve(__dirname, "../../data/demo/config/nti.json");
@@ -167,13 +169,18 @@ async function seedSignals(fixture, mfrMap) {
 async function runSeedAll() {
   await connectDemoDb();
   await resetDemo();
+  await seedDemoFixtures();
+  console.log("Demo seed complete.");
+  await disconnect();
+}
+
+export async function seedDemoFixtures() {
   const fixture = loadFixtures();
   const drugMap = await seedDrugs(fixture);
   const mfrMap = await seedManufacturers(fixture);
   await seedProducts(fixture, drugMap, mfrMap);
   await seedSignals(fixture, mfrMap);
-  console.log("Demo seed complete.");
-  await disconnect();
+  console.log("Demo fixtures loaded.");
 }
 
 async function runScoreAll() {

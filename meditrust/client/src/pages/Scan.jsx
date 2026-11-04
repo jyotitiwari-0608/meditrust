@@ -11,6 +11,8 @@ export default function Scan() {
   const [loading, setLoading] = useState(false);
   const [error, setError] = useState(null);
   const [cameraError, setCameraError] = useState(null);
+  const [cameraRequested, setCameraRequested] = useState(false);
+  const [cameraRunning, setCameraRunning] = useState(false);
   const [apiStatus, setApiStatus] = useState(null);
   const qrcodeRef = useRef(null);
 
@@ -19,7 +21,10 @@ export default function Scan() {
       qrcodeRef.current
         .stop()
         .then(() => { qrcodeRef.current = null; })
-        .catch(() => { qrcodeRef.current = null; });
+        .catch(() => { qrcodeRef.current = null; })
+        .finally(() => setCameraRunning(false));
+    } else {
+      setCameraRunning(false);
     }
   };
 
@@ -31,6 +36,10 @@ export default function Scan() {
     clearScanner();
     return () => clearScanner();
   }, [mode]);
+
+  useEffect(() => {
+    if (mode === "qr" && cameraRequested && !cameraError) startQr();
+  }, [mode, cameraRequested, cameraError]);
 
   useEffect(() => {
     let cancelled = false;
@@ -77,8 +86,9 @@ export default function Scan() {
     const elemId = "qr-reader";
     const container = document.getElementById(elemId);
     if (!container) return;
-    qrcodeRef.current = new Html5Qrcode(elemId);
-    qrcodeRef.current
+    const scanner = new Html5Qrcode(elemId);
+    qrcodeRef.current = scanner;
+    scanner
       .start(
         { facingMode: "environment" },
         { fps: 10, qrbox: { width: 250, height: 250 } },
@@ -87,7 +97,11 @@ export default function Scan() {
           // decoding error, ignore
         }
       )
+      .then(() => setCameraRunning(true))
       .catch((err) => {
+        qrcodeRef.current = null;
+        setCameraRunning(false);
+        setCameraRequested(false);
         setCameraError(
           "Camera access denied or unavailable. Use photo upload or manual search."
         );
@@ -139,14 +153,14 @@ export default function Scan() {
         <div className="scan-tabs">
           <button
             className={`tab-btn ${mode === "qr" ? "active" : ""}`}
-            onClick={() => { setMode("qr"); startQr(); }}
+            onClick={() => { setMode("qr"); setCameraRequested(true); }}
             disabled={mode === "qr" && !!cameraError}
           >
             Barcode / QR (camera)
           </button>
           <button
             className={`tab-btn ${mode === "photo" ? "active" : ""}`}
-            onClick={() => { setMode("photo"); stopQr(); }}
+            onClick={() => { setMode("photo"); setCameraRequested(false); stopQr(); }}
           >
             Photo of strip (OCR)
           </button>
@@ -156,8 +170,8 @@ export default function Scan() {
           <div className="qr-area">
             <div id="qr-reader" style={{ width: "100%", maxWidth: 420 }} />
             {cameraError && <div className="error">{cameraError}</div>}
-            <button className="toggle-btn stop" onClick={stopQr} disabled={!qrcodeRef.current}>
-              Stop camera
+            <button className="toggle-btn stop" onClick={() => { setCameraRequested(false); stopQr(); }} disabled={!cameraRunning}>
+              {cameraRunning ? "Stop camera" : cameraRequested ? "Starting camera…" : "Camera stopped"}
             </button>
             <p className="hint">Camera permission required. If blocked, switch to photo upload.</p>
           </div>
@@ -192,10 +206,10 @@ export default function Scan() {
               {matches.map((m, i) => (
                 <li key={i} className="match-item">
                   <div className="match-info">
-                    <strong>{m.brand || m.name}</strong>
+                    <strong>{m.brand || m.name || m.salt}</strong>
                     <span className="muted"> — {m.mfr || ""} ({m.salt || ""})</span>
                   </div>
-                  <button className="confirm-btn" onClick={() => navigate(`/search?q=${encodeURIComponent(m.brand || m.name || "")}`)}>
+                  <button className="confirm-btn" onClick={() => navigate("/search", { state: { selectedDrug: m } })}>
                     Confirm
                   </button>
                 </li>

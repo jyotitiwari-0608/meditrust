@@ -2,7 +2,7 @@ import { useState } from "react";
 import TrustBadge from "./TrustBadge.jsx";
 import SavingsTag from "./SavingsTag.jsx";
 
-export default function ResultsList({ items, loading, empty, onSelect, referencePrice, defaultSortBy = "trust" }) {
+export default function ResultsList({ items, loading, empty, onSelect, onToggleFavorite, favoriteIds = [], evidenceLoadingId, referencePrice, selectedProductId, defaultSortBy = "trust" }) {
   const [sortBy, setSortBy] = useState(defaultSortBy);
   const sorted = [...(items || [])].sort((a, b) => {
     if (sortBy === "price") {
@@ -59,13 +59,24 @@ export default function ResultsList({ items, loading, empty, onSelect, reference
               <SavingsTag price={item.mrp || item.price || 0} referencePrice={ref} />
               <TrustBadge band={item.band} />
             </div>
-            <button
-              className="select-btn"
-              onClick={() => onSelect(item)}
-              aria-label={`Select ${item.brand || item.name}`}
-            >
-              Select
-            </button>
+            <div className="result-actions">
+              <button
+                className="select-btn"
+                onClick={() => onToggleFavorite(item)}
+                aria-pressed={favoriteIds.includes(String(item.productId || item._id || item.id))}
+                aria-label={`${favoriteIds.includes(String(item.productId || item._id || item.id)) ? "Remove" : "Add"} ${item.brand || item.name} ${favoriteIds.includes(String(item.productId || item._id || item.id)) ? "from" : "to"} favourites`}
+              >
+                {favoriteIds.includes(String(item.productId || item._id || item.id)) ? "Remove" : "Select"}
+              </button>
+              <button
+                className="evidence-select-btn"
+                onClick={() => onSelect(item)}
+                disabled={String(item.productId || item._id || item.id) === String(evidenceLoadingId)}
+                aria-label={`View evidence for ${item.brand || item.name}`}
+              >
+                {String(item.productId || item._id || item.id) === String(evidenceLoadingId) ? "Loading…" : "Evidence"}
+              </button>
+            </div>
           </li>
         ))}
       </ul>

@@ -21,7 +21,9 @@ export default function EvidencePanel({ score, band, factors, justification, evi
           <li key={i} className="factor-item">
             <div className="factor-row">
               <span className="factor-name">{f.name}</span>
-              <span className="factor-contrib">{Number(f.contribution || 0).toFixed(3)}</span>
+              <span className="factor-contrib">
+                {Number(f.contribution || 0).toLocaleString(undefined, { maximumFractionDigits: 2 })}
+              </span>
             </div>
             <p className="factor-explanation">{f.explanation || ""}</p>
             {f.evidence && f.evidence.length > 0 && (

@@ -93,6 +93,7 @@ router.get("/", async (req, res, next) => {
         const score = scoreCache.get(mfrId) || { score: 40, band: "LimitedData", limitedData: true };
         return {
           id: r._id,
+          drugId: r.drug._id || r.drug,
           kind: "product",
           brand: r.brand,
           drug: r.drug.salt,

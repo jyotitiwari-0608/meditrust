@@ -11,8 +11,8 @@ const NAV_LINKS = [
   { to: "/search", label: "Search" },
   { to: "/scan", label: "Scan" },
   { to: "/doctor", label: "Doctor" },
-  { to: "/", label: "About" },
-  { to: "/", label: "Contact" },
+  { to: "/#about", label: "About" },
+  { to: "/#contact", label: "Contact" },
 ];
 
 function Navbar() {
